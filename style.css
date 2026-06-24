@@ -1,0 +1,1793 @@
+/* ============================================
+   БАЗОВЫЕ СТИЛИ
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+    background: #f0ede8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    background-image: radial-gradient(ellipse at 20% 30%, #e8e4de 0%, #d5d0c8 100%);
+}
+
+.app {
+    max-width: 1440px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 48px;
+    padding: 32px 36px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06), 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* ============================================
+   ВСЕ ТЕКСТОВЫЕ ЭЛЕМЕНТЫ
+   ============================================ */
+* {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, div, input, textarea, select,
+button, label, a, li, strong, em, b, i,
+th, td, caption, small, sub, sup {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+}
+
+input, textarea, select, button {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.brand h1 {
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #1a1a1a 0%, #555 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brand .sub {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-actions .date-badge {
+    background: rgba(0, 0, 0, 0.04);
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 450;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.sync-status {
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.2);
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.3s;
+}
+
+.sync-status.synced {
+    color: rgba(30, 160, 60, 0.6);
+}
+.sync-status.synced i { color: #1ea03c; }
+
+.sync-status.error {
+    color: rgba(200, 50, 50, 0.6);
+}
+.sync-status.error i { color: #c0392b; }
+
+.sync-status i { font-size: 13px; }
+
+.btn-icon {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: #1a1a1a;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary-sm {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary-sm:hover {
+    background: #333;
+}
+
+/* ============================================
+   НАВИГАЦИЯ
+   ============================================ */
+.app-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.app-nav .nav-btn {
+    background: transparent;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 450;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.app-nav .nav-btn:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: #1a1a1a;
+}
+
+.app-nav .nav-btn.active {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+/* ============================================
+   ЦЕЛИ МЕСЯЦА
+   ============================================ */
+.goals-section {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 18px 22px 22px;
+    margin-bottom: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.goals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.goals-header .goals-label {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.goals-header .goals-label i { color: rgba(0, 0, 0, 0.2); }
+
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.goal-item {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 14px;
+    padding: 12px 16px;
+    border-left: 4px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.2s;
+}
+
+.goal-item:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.goal-item .goal-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.goal-item .goal-content .goal-text {
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.goal-item .goal-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.goal-item .goal-actions button {
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-size: 13px;
+    transition: color 0.2s;
+    padding: 4px;
+}
+
+.goal-item .goal-actions button:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.goal-item .goal-actions .delete-goal:hover {
+    color: #c0392b;
+}
+
+.empty-goals {
+    color: rgba(0, 0, 0, 0.15);
+    font-style: italic;
+    padding: 6px 0;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+}
+
+/* ============================================
+   ССЫЛКИ
+   ============================================ */
+.goal-text a,
+.task-text a,
+.archive-item .note a,
+.idea-description a {
+    color: #0066cc;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+}
+
+.goal-text a:hover,
+.task-text a:hover,
+.archive-item .note a:hover,
+.idea-description a:hover {
+    color: #004499;
+}
+
+.goal-text a::after,
+.task-text a::after,
+.archive-item .note a::after {
+    content: ' ↗';
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.15s;
+}
+
+.goal-text a:hover::after,
+.task-text a:hover::after,
+.archive-item .note a:hover::after {
+    transform: translate(2px, -2px);
+}
+
+.task-text.done-text a {
+    color: rgba(0, 0, 0, 0.25);
+    text-decoration: line-through;
+}
+.task-text.done-text a::after { content: ''; }
+
+/* ============================================
+   МОДАЛЬНЫЕ ОКНА
+   ============================================ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 32px 36px 36px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+    animation: modalIn 0.25s ease;
+}
+
+.modal-sm { max-width: 480px; }
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+}
+
+.modal-header .close-modal {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0 8px;
+}
+
+.modal-header .close-modal:hover {
+    color: #1a1a1a;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.modal-body .form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.4);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-body .form-group textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 14px 16px;
+    font-size: 15px;
+    letter-spacing: -0.6px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    outline: none;
+    resize: vertical;
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    transition: border 0.2s;
+}
+
+.modal-body .form-group textarea:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.modal-body .form-group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.modal-body .form-group input[type="text"],
+.modal-body .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    font-size: 15px;
+    letter-spacing: -0.6px;
+    outline: none;
+    transition: border 0.2s;
+    background: rgba(255, 255, 255, 0.5);
+    color: #1a1a1a;
+}
+
+.modal-body .form-group input[type="text"]:focus,
+.modal-body .form-group select:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.modal-footer .btn-primary {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-footer .btn-primary:hover {
+    background: #333;
+}
+
+.modal-footer .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.3);
+    padding: 10px 28px;
+    border-radius: 40px;
+    font-weight: 450;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-footer .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.link-hint {
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.link-hint i { color: rgba(0, 0, 0, 0.1); }
+
+/* ============================================
+   КАЛЕНДАРЬ
+   ============================================ */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+@media (max-width: 960px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .app { padding: 20px; }
+    .modal { padding: 24px; }
+}
+
+.calendar-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 32px;
+    padding: 24px 24px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header .month-label {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+}
+
+.calendar-header .month-label span {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.nav-group {
+    display: flex;
+    gap: 6px;
+}
+
+.nav-group button {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    width: 36px;
+    height: 36px;
+    border-radius: 40px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-group button:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: #1a1a1a;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.day-cell {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 450;
+    letter-spacing: -0.6px;
+    background: transparent;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.day-cell:hover { background: rgba(0, 0, 0, 0.04); }
+.day-cell.other-month { color: rgba(0, 0, 0, 0.15); }
+
+.day-cell.today {
+    background: #1a1a1a;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.day-cell.selected {
+    border: 2px solid #1a1a1a;
+    background: rgba(0, 0, 0, 0.03);
+    font-weight: 550;
+}
+
+.day-cell.has-task::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 5px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.day-cell.today.has-task::after {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.day-cell.selected.has-task::after {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.day-cell.future { opacity: 0.9; }
+.day-cell.past { opacity: 0.5; }
+
+/* ============================================
+   ЗАДАЧИ
+   ============================================ */
+.tasks-panel {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 32px;
+    padding: 24px 24px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.panel-header .date-title {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-header .date-title i {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+}
+
+.panel-header .day-tag {
+    background: rgba(0, 0, 0, 0.04);
+    padding: 4px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 450;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.panel-header .day-tag.future-tag {
+    background: rgba(30, 100, 60, 0.06);
+    color: rgba(30, 80, 50, 0.6);
+    border-color: rgba(30, 100, 60, 0.08);
+}
+
+.task-list-section {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 14px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.task-list-section .task-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.task-list-section .task-list-header span {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+.task-list-section .task-list-header .task-count {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4px;
+    transition: background 0.15s;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.task-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.task-item .task-check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    border-radius: 30px;
+    border: 1.5px solid rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.task-item .task-check::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 30px;
+}
+
+.task-item .task-check:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.task-item .task-check.done {
+    background: #1a1a1a;
+    border-color: #1a1a1a;
+    color: #fff;
+}
+
+.task-item .task-check.done i {
+    font-size: 10px;
+    color: #fff;
+    pointer-events: none;
+}
+
+.task-item .task-check i {
+    pointer-events: none;
+}
+
+.task-item .task-text {
+    flex: 1;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    font-weight: 400;
+    word-break: break-word;
+    cursor: default;
+}
+
+.task-item .task-text.done-text {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.task-item .task-delete {
+    flex-shrink: 0;
+    cursor: pointer;
+    padding: 6px 8px;
+    z-index: 2;
+    position: relative;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.1);
+    transition: color 0.2s;
+    font-size: 14px;
+}
+
+.task-item .task-delete:hover {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.empty-tasks {
+    color: rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    padding: 8px 0 4px;
+    font-style: italic;
+    text-align: center;
+}
+
+.add-task-row {
+    display: flex;
+    gap: 8px;
+}
+
+.add-task-row input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 40px;
+    padding: 10px 16px;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    outline: none;
+    transition: all 0.2s;
+    color: #1a1a1a;
+}
+
+.add-task-row input:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.add-task-row input::placeholder {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.add-task-row button {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-task-row button:hover {
+    background: #333;
+}
+
+.task-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.task-actions-row .status {
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-sm {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.4);
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-weight: 450;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-outline-sm:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #1a1a1a;
+}
+
+/* ============================================
+   ПРОЕКТЫ
+   ============================================ */
+.projects-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding-top: 16px;
+    margin-top: 2px;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.projects-header h3 {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.project-item {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 14px;
+    padding: 8px 14px;
+    border-left: 3px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.project-item .p-name { font-weight: 450; }
+
+.project-item .p-meta {
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-item .p-meta .status-badge {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 2px 12px;
+    border-radius: 30px;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.project-item .del-proj {
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.project-item .del-proj:hover {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.add-project {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.add-project input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 40px;
+    padding: 8px 16px;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    outline: none;
+    transition: all 0.2s;
+    color: #1a1a1a;
+}
+
+.add-project input:focus {
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.add-project input::placeholder {
+    color: rgba(0, 0, 0, 0.12);
+}
+
+.add-project button {
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-project button:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: #1a1a1a;
+}
+
+/* ============================================
+   АРХИВ
+   ============================================ */
+.archive-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding-top: 16px;
+    margin-top: 2px;
+}
+
+.archive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.archive-header h3 {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.archive-list {
+    max-height: 80px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.archive-item {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 6px 14px;
+    margin-bottom: 4px;
+    border-left: 3px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.archive-item .note { flex: 1; }
+
+.archive-item .note-date {
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+}
+
+.archive-item .del-btn {
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.archive-item .del-btn:hover {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.empty-archive {
+    color: rgba(0, 0, 0, 0.12);
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    padding: 4px 0 2px;
+    font-style: italic;
+}
+
+/* ============================================
+   КОЛЛЕКЦИИ
+   ============================================ */
+.collections-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.collections-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.collections-header h2 i { color: rgba(0, 0, 0, 0.2); }
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.collection-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 18px 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s;
+}
+
+.collection-card:hover {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.collection-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.collection-card .card-header .collection-name {
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    word-break: break-word;
+}
+
+.collection-card .card-header .card-actions {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.collection-card .card-header .card-actions button {
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 6px;
+    transition: color 0.2s;
+    border-radius: 6px;
+}
+
+.collection-card .card-header .card-actions button:hover {
+    color: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.collection-card .card-header .card-actions .delete-collection:hover {
+    color: #c0392b;
+}
+
+.collection-card .card-body {
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding-top: 12px;
+}
+
+.collection-card .idea-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-bottom: 4px;
+    transition: background 0.15s;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+}
+
+.collection-card .idea-item:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.collection-card .idea-item .idea-bullet {
+    color: rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.collection-card .idea-item .idea-text {
+    flex: 1;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.collection-card .idea-item .idea-delete {
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 4px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+
+.collection-card .idea-item .idea-delete:hover {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.collection-card .add-idea-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.collection-card .add-idea-row input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+    padding: 8px 14px;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    outline: none;
+    transition: all 0.2s;
+    color: #1a1a1a;
+}
+
+.collection-card .add-idea-row input:focus {
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.collection-card .add-idea-row input::placeholder {
+    color: rgba(0, 0, 0, 0.12);
+}
+
+.collection-card .add-idea-row button {
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-weight: 450;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.collection-card .add-idea-row button:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: #1a1a1a;
+}
+
+.collection-card .empty-ideas {
+    color: rgba(0, 0, 0, 0.12);
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    padding: 6px 0 2px;
+    font-style: italic;
+}
+
+.collection-card .idea-count {
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.15);
+    margin-top: 6px;
+}
+
+/* ============================================
+   МАРКЕТИНГ
+   ============================================ */
+.marketing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.marketing-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.marketing-header h2 i { color: rgba(0, 0, 0, 0.2); }
+
+.marketing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.marketing-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 18px 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s;
+}
+
+.marketing-card:hover {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.marketing-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.marketing-card .card-header .idea-title {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    word-break: break-word;
+    flex: 1;
+}
+
+.marketing-card .card-header .card-actions {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.marketing-card .card-header .card-actions button {
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 6px;
+    transition: color 0.2s;
+    border-radius: 6px;
+}
+
+.marketing-card .card-header .card-actions button:hover {
+    color: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.marketing-card .card-header .card-actions .delete-marketing:hover {
+    color: #c0392b;
+}
+
+.marketing-card .card-body {
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding-top: 10px;
+}
+
+.marketing-card .card-body .idea-description {
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: -0.6px;
+    color: #1a1a1a;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 10px;
+}
+
+.marketing-card .card-body .idea-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-top: 6px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.marketing-card .card-body .idea-meta .tag {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 450;
+    letter-spacing: -0.6px;
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.marketing-card .card-body .idea-meta .tag.priority-high {
+    background: rgba(220, 50, 50, 0.1);
+    color: #c0392b;
+}
+
+.marketing-card .card-body .idea-meta .tag.priority-medium {
+    background: rgba(220, 170, 50, 0.1);
+    color: #b7950b;
+}
+
+.marketing-card .card-body .idea-meta .tag.priority-low {
+    background: rgba(50, 150, 220, 0.1);
+    color: #2c7ba0;
+}
+
+.marketing-card .card-body .idea-meta .tag.status-idea {
+    background: rgba(150, 150, 150, 0.1);
+    color: #666;
+}
+
+.marketing-card .card-body .idea-meta .tag.status-planning {
+    background: rgba(50, 150, 220, 0.1);
+    color: #2c7ba0;
+}
+
+.marketing-card .card-body .idea-meta .tag.status-active {
+    background: rgba(50, 200, 80, 0.1);
+    color: #27ae60;
+}
+
+.marketing-card .card-body .idea-meta .tag.status-completed {
+    background: rgba(50, 200, 80, 0.15);
+    color: #1e8449;
+}
+
+.marketing-card .card-body .idea-meta .tag.status-archived {
+    background: rgba(150, 150, 150, 0.08);
+    color: #888;
+}
+
+.marketing-card .card-body .idea-meta .idea-date {
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    color: rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+}
+
+/* ============================================
+   СТАТИСТИКА
+   ============================================ */
+.stats-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+    letter-spacing: -0.6px;
+}
+
+.stats-footer .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stats-footer .stat-item i {
+    color: rgba(0, 0, 0, 0.08);
+}
+
+.stats-footer .stat-item strong {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+
+/* ============================================
+   SCROLL
+   ============================================ */
+.task-list-section::-webkit-scrollbar,
+.project-list::-webkit-scrollbar,
+.archive-list::-webkit-scrollbar,
+.modal::-webkit-scrollbar {
+    width: 4px;
+}
+.task-list-section::-webkit-scrollbar-thumb,
+.project-list::-webkit-scrollbar-thumb,
+.archive-list::-webkit-scrollbar-thumb,
+.modal::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+}
+
+/* ============================================
+   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ
+   ============================================ */
+@media (max-width: 600px) {
+    .app { padding: 16px; border-radius: 32px; }
+    .brand h1 { font-size: 22px; }
+    .header-actions .date-badge { display: none; }
+    .modal { padding: 20px; }
+    
+    .app-nav .nav-btn {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .marketing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .collection-card .add-idea-row {
+        flex-wrap: wrap;
+    }
+    
+    .collection-card .add-idea-row input {
+        min-width: 120px;
+    }
+    
+    .goal-text a::after,
+    .task-text a::after,
+    .archive-item .note a::after {
+        content: '';
+    }
+    
+    .task-item {
+        padding: 8px 10px;
+    }
+    
+    .task-item .task-check {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+    }
+    
+    .task-item .task-check::after {
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+    }
+    
+    .task-item .task-delete {
+        padding: 8px 10px;
+    }
+}
+
+
+/* ============================================
+   ЭКРАН ВХОДА ПО PIN-КОДУ
+   ============================================ */
+.pin-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.pin-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.pin-container {
+    max-width: 380px;
+    width: 100%;
+    padding: 40px 32px;
+    text-align: center;
+}
+
+.pin-brand h1 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+    font-weight: 700;
+    font-size: 32px;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #1a1a1a 0%, #555 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pin-sub {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    display: block;
+    margin-top: 4px;
+}
+
+.pin-lock {
+    font-size: 48px;
+    color: rgba(0, 0, 0, 0.08);
+    margin: 24px 0 12px;
+}
+
+.pin-title {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 28px;
+}
+
+.pin-dots {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.pin-dots .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.pin-dots .dot.filled {
+    background: #1a1a1a;
+    border-color: #1a1a1a;
+}
+
+.pin-error {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+    font-size: 14px;
+    color: #c0392b;
+    height: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pin-error.show {
+    opacity: 1;
+}
+
+.pin-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.pin-key {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: -0.6px;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 16px 0;
+    border: none;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.03);
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.pin-key:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.pin-key:active {
+    transform: scale(0.94);
+}
+
+.pin-key.pin-empty {
+    background: transparent;
+    cursor: default;
+    pointer-events: none;
+}
+
+.pin-key.pin-delete {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.2);
+    background: transparent;
+}
+
+.pin-key.pin-delete:hover {
+    color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 500px) {
+    .pin-container {
+        padding: 24px 20px;
+    }
+    .pin-key {
+        font-size: 22px;
+        padding: 14px 0;
+    }
+    .pin-dots {
+        gap: 12px;
+    }
+    .pin-dots .dot {
+        width: 14px;
+        height: 14px;
+    }
+}
