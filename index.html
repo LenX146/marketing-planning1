@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>S.L.E.N.G · Планирование</title>
     
     <!-- Font Awesome -->
@@ -89,7 +89,7 @@
             <div class="goals-header">
                 <div class="goals-label">
                     <i class="fas fa-flag"></i> Цели месяца
-                    <span style="font-weight:400; text-transform:none; font-size:12px; color:rgba(0,0,0,0.15);" id="goalsCount">0</span>
+                    <span id="goalsCount">0</span>
                 </div>
                 <button class="btn-primary-sm" id="addGoalBtn"><i class="fas fa-plus"></i> Добавить цель</button>
             </div>
@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="add-task-row">
-                    <input type="text" id="newTaskInput" placeholder="Новая задача (можно вставить ссылку)..." />
+                    <input type="text" id="newTaskInput" placeholder="Новая задача..." />
                     <button id="addTaskBtn"><i class="fas fa-plus"></i> Добавить</button>
                 </div>
 
@@ -156,7 +156,7 @@
                 <div class="projects-section">
                     <div class="projects-header">
                         <h3><i class="fas fa-folder-open"></i> Проекты</h3>
-                        <span style="font-size:12px; color:rgba(0,0,0,0.15);" id="projectCount">0</span>
+                        <span id="projectCount">0</span>
                     </div>
                     <div class="project-list" id="projectList">
                         <div class="empty-archive">Нет проектов</div>
@@ -216,7 +216,8 @@
         </div>
     </div>
 
-    <!-- МОДАЛКА: СОЗДАНИЕ КОЛЛЕКЦИИ -->
+    <!-- МОДАЛКИ -->
+    <!-- Модалка: Создание коллекции -->
     <div class="modal-overlay" id="collectionModal">
         <div class="modal modal-sm">
             <div class="modal-header">
@@ -236,7 +237,7 @@
         </div>
     </div>
 
-    <!-- МОДАЛКА: РЕДАКТИРОВАНИЕ КОЛЛЕКЦИИ -->
+    <!-- Модалка: Редактирование коллекции -->
     <div class="modal-overlay" id="editCollectionModal">
         <div class="modal modal-sm">
             <div class="modal-header">
@@ -256,7 +257,7 @@
         </div>
     </div>
 
-    <!-- МОДАЛКА: МАРКЕТИНГОВАЯ ИДЕЯ -->
+    <!-- Модалка: Маркетинговая идея -->
     <div class="modal-overlay" id="marketingModal">
         <div class="modal">
             <div class="modal-header">
@@ -270,7 +271,7 @@
                 </div>
                 <div class="form-group">
                     <label>Описание идеи</label>
-                    <textarea id="marketingDescInput" placeholder="Подробное описание маркетинговой идеи..."></textarea>
+                    <textarea id="marketingDescInput" placeholder="Подробное описание..."></textarea>
                     <div class="link-hint" style="margin-top:6px;">
                         <i class="fas fa-link"></i> Ссылки автоматически становятся кликабельными
                     </div>
@@ -314,7 +315,7 @@
         </div>
     </div>
 
-    <!-- МОДАЛКА: ЦЕЛИ (основная) -->
+    <!-- Модалка: Цели -->
     <div class="modal-overlay" id="goalModal">
         <div class="modal">
             <div class="modal-header">
@@ -324,7 +325,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Текст цели</label>
-                    <textarea id="goalTextInput" placeholder="Введите текст цели (можно вставить ссылку)..."></textarea>
+                    <textarea id="goalTextInput" placeholder="Введите текст цели..."></textarea>
                     <div class="link-hint" style="margin-top:6px;">
                         <i class="fas fa-link"></i> Ссылки автоматически становятся кликабельными
                     </div>
@@ -357,11 +358,7 @@
     function updateDots() {
         const dots = pinDots.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
-            if (index < enteredPin.length) {
-                dot.classList.add('filled');
-            } else {
-                dot.classList.remove('filled');
-            }
+            dot.classList.toggle('filled', index < enteredPin.length);
         });
     }
 
@@ -376,9 +373,7 @@
                 }
             } else {
                 pinError.classList.add('show');
-                setTimeout(() => {
-                    pinError.classList.remove('show');
-                }, 2000);
+                setTimeout(() => pinError.classList.remove('show'), 2000);
                 enteredPin = '';
                 updateDots();
             }
@@ -403,8 +398,7 @@
 
     document.querySelectorAll('.pin-key[data-value]').forEach(btn => {
         btn.addEventListener('click', function() {
-            const value = this.dataset.value;
-            addPinDigit(value);
+            addPinDigit(this.dataset.value);
         });
     });
 
@@ -412,13 +406,9 @@
 
     document.addEventListener('keydown', function(e) {
         if (pinOverlay.classList.contains('hidden')) return;
-        if (e.key >= '0' && e.key <= '9') {
-            addPinDigit(e.key);
-        } else if (e.key === 'Backspace') {
-            deletePinDigit();
-        } else if (e.key === 'Enter') {
-            checkPin();
-        }
+        if (e.key >= '0' && e.key <= '9') addPinDigit(e.key);
+        else if (e.key === 'Backspace') deletePinDigit();
+        else if (e.key === 'Enter') checkPin();
     });
 
     document.getElementById('logoutBtn')?.addEventListener('click', function() {
@@ -449,7 +439,6 @@
     const USER_ID = 'sleng_owner';
 
     console.log('✅ Firebase подключён!');
-    console.log('📡 База данных:', firebaseConfig.databaseURL);
 </script>
 
 <!-- Основной скрипт -->
